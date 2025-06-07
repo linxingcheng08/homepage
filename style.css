@@ -14,7 +14,7 @@ body {
 /* ヒーローセクション */
 .hero {
   position: relative;
-  height: 200vh;
+  height: 100vh;
   background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
   color: white;
   display: flex;
@@ -40,7 +40,7 @@ body {
 }
 
 .logo {
-  width: 200px;
+  width: 400px;
   max-width: 80%;
   margin-bottom: 30px;
   animation: popin 1.2s ease-out;
