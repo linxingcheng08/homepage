@@ -21,7 +21,7 @@
   <main>
     <section class="video-section">
       <h2>紹介動画</h2>
-      <video controls playsinline>
+      <video id="intro-video" muted playsinline>
         <source src="紹介動画.mp4" type="video/mp4">
         お使いのブラウザは動画をサポートしていません。
       </video>
@@ -38,23 +38,21 @@
   </main>
 
   <footer>
-    <p>&copy; 2025緑陽祭2年3組クラス参加企画</p>
+    <p>&copy; 2025 緑陽祭 2年3組クラス参加企画</p>
   </footer>
+
+  <script>
+    const video = document.getElementById('intro-video');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(video);
+  </script>
 </body>
 </html>
-
-<script>
-  const video = document.getElementById('intro-video');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    });
-  }, { threshold: 0.5 }); // 50%以上見えたら再生
-
-  observer.observe(video);
-</script>
