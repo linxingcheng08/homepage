@@ -1,45 +1,56 @@
 body {
   margin: 0;
   font-family: 'M PLUS Rounded 1c', sans-serif;
-  background-color: white;
+  background: #fff;
   color: #333;
+  line-height: 1.6;
 }
 
 .hero {
   position: relative;
-  height: 100vh;
-  background-color: #000; 
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+  padding: 100px 20px 60px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 .logo {
-  width: 250px;
+  width: 300px;
   max-width: 90%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   animation: popin 1.2s ease-out;
 }
 
-.hero-content h1 {
-  font-size: 2.5rem;
-  margin: 0.5em 0;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-}
-
 @keyframes popin {
-  0% { transform: scale(0.7); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-/* スクロール矢印 */
+.hero h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
 .scroll-indicator {
   position: absolute;
   bottom: 20px;
@@ -48,47 +59,49 @@ body {
   font-size: 2rem;
   color: white;
   animation: bounce 1.5s infinite;
-  transition: opacity 0.5s;
-}
-
-.scroll-indicator.hide {
-  opacity: 0;
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, 10px); }
-}
-
-main {
-  padding: 2rem;
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 10px);
+  }
 }
 
 .video-section {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
 }
 
-.video-section video {
+.video-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+video {
   width: 100%;
   max-width: 720px;
-  margin: 1rem auto;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .info {
-  max-width: 800px;
-  margin: 2rem auto;
-  line-height: 1.6;
-  font-size: 1.1rem;
+  padding: 40px 20px;
   text-align: center;
 }
 
+.info h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
 footer {
-  background: #222;
+  background: #333;
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 15px 10px;
+  font-size: 0.9em;
 }
