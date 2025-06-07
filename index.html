@@ -13,14 +13,18 @@
     <div class="overlay"></div>
     <div class="hero-content">
       <img src="logo.png" alt="どばリーグ ロゴ" class="logo">
-      <h1>挑め！クイズアドベンチャー！</h1>
+      <h1>どばリーグへようこそ！</h1>
+      <p>挑め！クイズアドベンチャー！</p>
+    </div>
+    <div class="scroll-indicator">
+      <span class="arrow">↓</span>
     </div>
   </header>
 
   <main>
     <section class="video-section">
       <h2>紹介動画</h2>
-      <video id="intro-video" muted playsinline>
+      <video id="intro-video" controls playsinline>
         <source src="紹介動画.mp4" type="video/mp4">
         お使いのブラウザは動画をサポートしていません。
       </video>
@@ -37,10 +41,11 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 緑陽祭 2年3組クラス参加企画</p>
+    <p>&copy; 2025 緑陽祭 2年3組 クラス参加企画</p>
   </footer>
 
   <script>
+    // 動画の自動再生（Intersection Observer）
     const video = document.getElementById('intro-video');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -52,6 +57,16 @@
       });
     }, { threshold: 0.5 });
     observer.observe(video);
+
+    // スクロールインジケータ非表示
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        scrollIndicator.classList.add('hide');
+      } else {
+        scrollIndicator.classList.remove('hide');
+      }
+    });
   </script>
 </body>
 </html>
