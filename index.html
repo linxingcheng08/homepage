@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>どばリーグ</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      <img src="logo.png" alt="どばリーグ ロゴ" class="logo">
+      <img src="logo.png" alt="どばリーグ ロゴ" class="logo" />
       <h1>どばリーグへようこそ！</h1>
       <p>挑め！クイズアドベンチャー！</p>
     </div>
-    <div class="scroll-indicator">
-      <span class="arrow">↓</span>
-    </div>
+    <div class="scroll-indicator">↓</div>
   </header>
 
   <main>
     <section class="video-section">
       <h2>紹介動画</h2>
-      <video id="intro-video" controls playsinline>
-        <source src="紹介動画.mp4" type="video/mp4">
+      <video id="intro-video" muted playsinline>
+        <source src="紹介動画.mp4" type="video/mp4" />
         お使いのブラウザは動画をサポートしていません。
       </video>
     </section>
@@ -33,40 +31,32 @@
     <section class="info">
       <h2>どばリーグとは？</h2>
       <p>
-        トロッコに乗ってクイズを解け！！<br>
-        トロッコに乗って、右か左か、運命の選択！<br>
+        トロッコに乗ってクイズを解け！！<br />
+        トロッコに乗って、右か左か、運命の選択！<br />
         君のチームは何問連続正解できるか？
       </p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 緑陽祭 2年3組 クラス参加企画</p>
+    <p>&copy; 2025 緑陽祭 2年3組クラス参加企画</p>
   </footer>
 
   <script>
-    // 動画の自動再生（Intersection Observer）
-    const video = document.getElementById('intro-video');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          video.play();
-        } else {
-          video.pause();
-        }
-      });
-    }, { threshold: 0.5 });
+    const video = document.getElementById("intro-video");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
     observer.observe(video);
-
-    // スクロールインジケータ非表示
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        scrollIndicator.classList.add('hide');
-      } else {
-        scrollIndicator.classList.remove('hide');
-      }
-    });
   </script>
 </body>
 </html>
